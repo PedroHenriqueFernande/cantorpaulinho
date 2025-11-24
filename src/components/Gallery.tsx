@@ -1,3 +1,4 @@
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
   Carousel,
   CarouselContent,
@@ -34,12 +35,14 @@ const Gallery = () => {
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index}>
-                <div className="group overflow-hidden rounded-2xl shadow-soft hover:shadow-hover transition-smooth">
-                  <img
-                    src={image}
-                    alt={`Show ao vivo de Paulinho Vasconcellos ${index + 1}`}
-                    className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-smooth"
-                  />
+                <div className="overflow-hidden rounded-2xl shadow-soft hover:shadow-hover transition-smooth">
+                  <AspectRatio ratio={9 / 16}>
+                    <img
+                      src={image}
+                      alt={`Show ao vivo de Paulinho Vasconcellos ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </AspectRatio>
                 </div>
               </CarouselItem>
             ))}
