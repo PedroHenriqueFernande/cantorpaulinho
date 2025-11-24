@@ -33,9 +33,9 @@ const Shows = () => {
             {videos.map((video, index) => (
               <CarouselItem key={index}>
                 <div className="rounded-2xl shadow-soft overflow-hidden border border-border hover:shadow-hover transition-smooth">
-                  <AspectRatio ratio={16 / 9}>
+                  <AspectRatio ratio={9 / 16}>
                     <video controls preload="metadata" className="w-full h-full object-cover rounded-2xl">
-                      <source src={video} type="video/mp4" />
+                      <source src={`${video}#t=0.1`} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </AspectRatio>
