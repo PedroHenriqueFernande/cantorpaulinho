@@ -36,7 +36,7 @@ const Shows = () => {
                   <AspectRatio ratio={9 / 16}>
                     <video controls preload="metadata" className="w-full h-full object-cover rounded-2xl">
                       <source src={`${video}#t=0.1`} type="video/mp4" />
-                      Your browser does not support the video tag.
+
                     </video>
                   </AspectRatio>
                 </div>
