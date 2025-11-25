@@ -28,7 +28,7 @@ const Shows = () => {
           </p>
         </div>
 
-        <Carousel className="w-full max-w-4xl mx-auto">
+        <Carousel className="w-full max-w-xl mx-auto">
           <CarouselContent>
             {videos.map((video, index) => (
               <CarouselItem key={index}>
