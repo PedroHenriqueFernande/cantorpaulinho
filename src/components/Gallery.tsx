@@ -31,25 +31,43 @@ const Gallery = () => {
           </p>
         </div>
 
-        <Carousel className="w-full max-w-4xl mx-auto">
-          <CarouselContent>
-            {images.map((image, index) => (
-              <CarouselItem key={index}>
-                <div className="overflow-hidden rounded-2xl shadow-soft hover:shadow-hover transition-smooth">
-                  <AspectRatio ratio={9 / 16}>
-                    <img
-                      src={image}
-                      alt={`Show ao vivo de Paulinho Vasconcellos ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </AspectRatio>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        {/* Mobile: Carousel */}
+        <div className="md:hidden">
+          <Carousel className="w-full mx-auto" style={{ maxWidth: '345px' }}>
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="overflow-hidden rounded-2xl shadow-soft hover:shadow-hover transition-smooth">
+                    <AspectRatio ratio={9 / 16}>
+                      <img
+                        src={image}
+                        alt={`Show ao vivo de Paulinho Vasconcellos ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </AspectRatio>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+
+        {/* Desktop: Grid */}
+        <div className="hidden md:grid md:grid-cols-4 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+          {images.map((image, index) => (
+            <div key={index} className="overflow-hidden rounded-2xl shadow-soft hover:shadow-hover transition-smooth">
+              <AspectRatio ratio={9 / 16}>
+                <img
+                  src={image}
+                  alt={`Show ao vivo de Paulinho Vasconcellos ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </AspectRatio>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

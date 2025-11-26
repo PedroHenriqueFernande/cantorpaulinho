@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import CustomVideoPlayer from "./CustomVideoPlayer";
 
 const Shows = () => {
   const videos = [
@@ -28,24 +29,41 @@ const Shows = () => {
           </p>
         </div>
 
-        <Carousel className="w-full max-w-xl mx-auto">
-          <CarouselContent>
-            {videos.map((video, index) => (
-              <CarouselItem key={index}>
-                <div className="rounded-2xl shadow-soft overflow-hidden border border-border hover:shadow-hover transition-smooth">
-                  <AspectRatio ratio={9 / 16}>
-                    <video controls preload="metadata" className="w-full h-full object-cover rounded-2xl">
-                      <source src={`${video}#t=0.1`} type="video/mp4" />
+        {/* Mobile: Carousel */}
+        <div className="md:hidden">
+          <Carousel className="w-full mx-auto" style={{ maxWidth: '345px' }}>
+            <CarouselContent>
+              {videos.map((video, index) => (
+                <CarouselItem key={index}>
+                  <div className="rounded-2xl shadow-soft overflow-hidden border border-border hover:shadow-hover transition-smooth">
+                    <AspectRatio ratio={9 / 16}>
+                      <CustomVideoPlayer
+                        src={video}
+                        className="w-full h-full object-cover rounded-2xl"
+                      />
+                    </AspectRatio>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
 
-                    </video>
-                  </AspectRatio>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        {/* Desktop: Grid */}
+        <div className="hidden md:grid md:grid-cols-5 lg:grid-cols-5 gap-4 max-w-7xl mx-auto">
+          {videos.map((video, index) => (
+            <div key={index} className="rounded-2xl shadow-soft overflow-hidden border border-border hover:shadow-hover transition-smooth">
+              <AspectRatio ratio={9 / 16}>
+                <CustomVideoPlayer
+                  src={video}
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </AspectRatio>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
