@@ -22,7 +22,7 @@ const AgendaShows = () => {
                     {/* Desktop: Agenda Dezembro Site */}
                     <div className="hidden md:flex justify-center">
                         <img
-                            src="/jan.jpeg"
+                            src="/janeir.jpg"
                             alt="Agenda de Shows - Janeiro"
                             className="max-h-[70vh] w-auto max-w-full rounded-2xl shadow-hover"
                         />
