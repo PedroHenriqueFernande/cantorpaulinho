@@ -14,17 +14,19 @@ const AgendaShows = () => {
                 <div className="w-full">
                     {/* Mobile: Agenda de Show Feed */}
                     <img
-                        src="/Agenda de Show Feed.jpg"
-                        alt="Agenda de Shows - Próximas apresentações"
+                        src="/jan.jpeg"
+                        alt="Agenda de Shows - Janeiro"
                         className="md:hidden w-full rounded-2xl shadow-hover"
                     />
 
                     {/* Desktop: Agenda Dezembro Site */}
-                    <img
-                        src="/Agenda Dezembro Site.jpg"
-                        alt="Agenda de Shows - Próximas apresentações"
-                        className="hidden md:block w-full rounded-2xl shadow-hover"
-                    />
+                    <div className="hidden md:flex justify-center">
+                        <img
+                            src="/jan.jpeg"
+                            alt="Agenda de Shows - Janeiro"
+                            className="max-h-[70vh] w-auto max-w-full rounded-2xl shadow-hover"
+                        />
+                    </div>
                 </div>
             </div>
         </section>
